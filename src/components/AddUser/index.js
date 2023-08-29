@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Card from '../UI/Card/index';
+import Button from '../UI/Button';
+
 import styles from './index.module.css';
 
 const AddUser = ({ onSave }) => {
@@ -56,9 +58,7 @@ const AddUser = ({ onSave }) => {
             />
           </p>
         </div>
-        <div>
-          <button type='submit'>Add User</button>
-        </div>
+        <Button type='submit'>Add User</Button>
       </form>
     </Card>
   )
