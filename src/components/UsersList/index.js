@@ -1,15 +1,17 @@
+import Card from '../UI/Card';
 import styles from './index.module.css';
 
-const UsersList = ({ items }) => {
+const UsersList = ({ users }) => {
   return (
-    <div>
-      {items.map((user, index) => 
-        <div key={index}>
-          <p>{user.username}</p>
-          <p>{user.age}</p>
-        </div>
-      )}
-    </div>
+    <Card className={styles.users}>
+      <ul>
+        {users.map((user, index) => 
+          <li key={index}>
+            {user.name} ({user.age} years old)
+          </li>
+        )}
+      </ul>
+    </Card>
   )
 }
 

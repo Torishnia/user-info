@@ -4,7 +4,7 @@ import Button from '../UI/Button';
 
 import styles from './index.module.css';
 
-const AddUser = ({ onSave }) => {
+const AddUser = ({ onAddUser }) => {
   const [enteredUsername, setEnteredUsername] = useState('');
   const [enteredAge, setEnteredAge] = useState('');
 
@@ -14,14 +14,7 @@ const AddUser = ({ onSave }) => {
     if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) return;
     if (+enteredAge < 1) return;
 
-    const userData = [
-      {
-        username: enteredUsername,
-        age: enteredAge,
-      }
-    ]
-
-    onSave(userData);
+    onAddUser(enteredUsername, enteredAge);
     setEnteredUsername('');
     setEnteredAge('');
   }
